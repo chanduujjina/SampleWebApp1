@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 @WebServlet("/advanced")
 public class AdvancedServlet extends HttpServlet{
 
@@ -15,18 +18,19 @@ public class AdvancedServlet extends HttpServlet{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	static Logger log = LogManager.getLogger(AdvancedServlet.class.getName());
 	
 	public void	init() {
-		System.out.println("inside AdvancedServlet init method");
+		log.info("inside AdvancedServlet init method");
 	}
 	
 	public void	service(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-		System.out.println("inside AdvancedServlet service method");
+		log.info("inside AdvancedServlet service method");
 		
 		String name = req.getParameter("name");
 		String surName = req.getParameter("surName");
 		
-		System.out.println("welcome "+name+" "+surName);
+		log.info("welcome "+name+" "+surName);
 		
 		PrintWriter printWriter = resp.getWriter();
 		

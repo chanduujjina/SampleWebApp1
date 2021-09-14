@@ -40,3 +40,33 @@ get the (Get)
 
 How to convert dynamic web Project into maven project
 
+
+1.Send the data to the server
+
+life a cycle of servlets
+
+1.Servlet class loaded
+2.Servlet instane is created
+3.init
+4.service
+4.destroy
+
+Ways to send data from client to server
+
+1)Query param
+http://localhost:7777/SampleWebApp1/hello?name=chandu&surName=ujjina
+
+http://localhost:7777/SampleWebApp1/welcome?name=chandu&surName=ujjina
+
+
+http://localhost:7777/SampleWebApp1/
+
+localhost-Host name
+8080 - port number
+SampleWebApp1 - context name
+
+
+
+
+
+
