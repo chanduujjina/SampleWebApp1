@@ -1,8 +1,8 @@
 package com.demo.web.practice.service;
 
 import com.demo.web.practice.dao.UserDetailDao;
-import com.demo.web.practice.dao.UserDetailExeption;
 import com.demo.web.practice.dto.UserDetails;
+import com.demo.web.practice.exception.UserDetailExeption;
 
 public class UserDetailService {
 	

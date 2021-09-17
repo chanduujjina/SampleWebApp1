@@ -3,11 +3,13 @@ package com.demo.web.practice.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.demo.web.practice.dto.UserDetails;
+import com.demo.web.practice.exception.UserDetailExeption;
 
 
 public class UserDetailDao {
@@ -29,7 +31,11 @@ public class UserDetailDao {
 			
 			preparedStatement.execute();
 		} catch (SQLException sqlex) {
-			log.error(sqlex.getMessage());
+			log.error(sqlex);
+			if(sqlex instanceof SQLIntegrityConstraintViolationException) {
+				throw new UserDetailExeption("User already created for given data",sqlex);
+			}
+		
 			throw new UserDetailExeption("error in creating user",sqlex);
 		} catch (ClassNotFoundException ex) {
 			log.error(ex.getMessage());

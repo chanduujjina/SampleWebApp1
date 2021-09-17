@@ -1,25 +1,23 @@
-package com.demo.web.practice.dao;
+package com.demo.web.practice.exception;
 
-public class UserDetailExeption extends Exception {
+public class UserValidationException extends Exception{
 
-	public UserDetailExeption() {
+	public UserValidationException() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-
-
-	public UserDetailExeption(String message, Throwable cause) {
+	public UserValidationException(String message, Throwable cause) {
 		super(message, cause);
 		// TODO Auto-generated constructor stub
 	}
 
-	public UserDetailExeption(String message) {
+	public UserValidationException(String message) {
 		super(message);
 		// TODO Auto-generated constructor stub
 	}
 
-	public UserDetailExeption(Throwable cause) {
+	public UserValidationException(Throwable cause) {
 		super(cause);
 		// TODO Auto-generated constructor stub
 	}
@@ -28,5 +26,10 @@ public class UserDetailExeption extends Exception {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
+	
+	
+	
+	
 
 }
