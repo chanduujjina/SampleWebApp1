@@ -16,7 +16,7 @@
   </servlet>
   
   <servlet-mapping>
-  <servlet-name>helloworld</servlet-name>
+   <servlet-name>helloworld</servlet-name>
   <url-pattern>/hello</url-pattern>
   </servlet-mapping>
   
@@ -26,7 +26,7 @@
   </servlet>
   
   <servlet-mapping>
-  <servlet-name>welcomeServlet</servlet-name>
+   <servlet-name>welcomeServlet</servlet-name>
   <url-pattern>/welcome</url-pattern>
   </servlet-mapping>
   
