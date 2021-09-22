@@ -2,6 +2,7 @@ package com.demo.web.practice.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 
@@ -20,7 +21,7 @@ public class UserDetailDao {
 		log.info("inside persistUser method");
 		
 		log.debug(userDetails);
-		String inserQuery = "insert into user (userName,gender,phone,email) values(?,?,?,?)";
+		String inserQuery = "insert into user (userName,gender,phone,email,password) values(?,?,?,?,?)";
 		try {
 			Connection connection = DBUtility.getConnection();
 			PreparedStatement preparedStatement = connection.prepareStatement(inserQuery);
@@ -28,6 +29,7 @@ public class UserDetailDao {
 			preparedStatement.setString(2, userDetails.getGender());
 			preparedStatement.setString(3, userDetails.getPhoneNumber());
 			preparedStatement.setString(4, userDetails.getEmailId());
+			preparedStatement.setString(5, userDetails.getPassword());
 			
 			preparedStatement.execute();
 		} catch (SQLException sqlex) {
@@ -42,6 +44,21 @@ public class UserDetailDao {
 			throw new UserDetailExeption("error in creating user",ex);
 		}
 		
+	}
+	public UserDetails getUserByUserName(String userName,String password) throws ClassNotFoundException, SQLException {
+		Connection connection = DBUtility.getConnection();
+		String fetchQuery = "select * from user where userName =? and password =?";
+		PreparedStatement preparedStatement = connection.prepareStatement(fetchQuery);
+		preparedStatement.setString(1, userName);
+		preparedStatement.setString(2, password);
+		preparedStatement.execute();
+		ResultSet resultSet = preparedStatement.getResultSet();
+		UserDetails detail = null;
+		while(resultSet.next()) {
+			detail = new UserDetails(null, null,resultSet.getString("gender"),resultSet.getString("phone"),
+					resultSet.getString("userName"),resultSet.getString("email"), resultSet.getString("password"));
+		}
+		return detail;
 	}
 
 }

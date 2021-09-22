@@ -65,6 +65,12 @@ localhost-Host name
 8080 - port number
 SampleWebApp1 - context name
 
+filters
+listeners
+
+JSP(Java server pages)
+Request dispatcher
+
 
 
 

@@ -40,8 +40,8 @@ public class RegisterServlet extends HttpServlet{
 		String gender = req.getParameter("gender");
 		String emailId = req.getParameter("emailId");
 		String userName = firstName+"_"+lastName;
-		
-		UserDetails userDetails = new UserDetails(firstName,lastName,gender,phone,userName,emailId);
+		String password = req.getParameter("password");
+		UserDetails userDetails = new UserDetails(firstName,lastName,gender,phone,userName,emailId,password);
 		UserDetailValidation userDetailValidation = new UserDetailValidation();
 		PrintWriter printWriter = resp.getWriter();
 		printWriter.write("<html>");

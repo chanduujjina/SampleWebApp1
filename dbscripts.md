@@ -7,3 +7,5 @@ create table user (userId int NOT NULL AUTO_INCREMENT,userName varchar(255),gend
 
 ALTER TABLE  user ADD UNIQUE (phone ,email);
 
+ALTER TABLE user  ADD password varchar(255);
+

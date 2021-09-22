@@ -3,7 +3,7 @@ package com.demo.web.practice.dto;
 public class UserDetails {
 	
 	public UserDetails(String firstName, String lastName, String gender, String phoneNumber, String userName,
-			String emailId) {
+			String emailId,String password) {
 		super();
 		
 		this.firstName = firstName;
@@ -12,6 +12,7 @@ public class UserDetails {
 		this.phoneNumber = phoneNumber;
 		this.userName = userName;
 		this.emailId = emailId;
+		this.password =password;
 	}
 
 	public UserDetails() {
@@ -94,6 +95,16 @@ public class UserDetails {
 	private String userName;
 	
 	private String emailId;
+	
+	private String password;
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	
 
 }
