@@ -71,6 +71,12 @@ listeners
 JSP(Java server pages)
 Request dispatcher
 
+1.Send data from from another servlet
+a)using request dispather(forward,include)
+b)url redirecting
+c)HttpSession
+
+
 
 
 

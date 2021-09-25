@@ -17,6 +17,10 @@ import com.demo.web.practice.service.UserDetailService;
 
 @WebServlet("/login")
 public class LoginController extends HttpServlet {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	static Logger log = LogManager.getLogger(LoginController.class.getName());
 	UserDetailService service  = null;
 
