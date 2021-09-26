@@ -75,6 +75,42 @@ Request dispatcher
 a)using request dispather(forward,include)
 b)url redirecting
 c)HttpSession
+2)Demo on login page
+
+
+26/09:
+------------
+What is a filter?
+Logging
+Auditing
+Metrics
+Validation
+what is listeners?
+
+    <servlet>
+  <servlet-name>loginServlet</servlet-name>
+  <servlet-class>com.demo.web.practice.LoginController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+   <servlet-name>loginServlet</servlet-name>
+  <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  
+  <filter>
+  <filter-name>myFilter</filter-name>
+  <filter-class>com.demo.web.practice.MyFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+  <filter-name>myFilter</filter-name>
+  <url-pattern>/login</url-pattern>
+  </filter-mapping>
+  
+
+
+introduction of jsp
+
 
 
 
